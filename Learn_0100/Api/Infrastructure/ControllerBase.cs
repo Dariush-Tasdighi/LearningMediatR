@@ -1,4 +1,4 @@
-﻿namespace Infrastructor;
+﻿namespace Infrastructure;
 
 [Microsoft.AspNetCore.Mvc.ApiController]
 [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]

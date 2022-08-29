@@ -1,6 +1,6 @@
 ﻿namespace Api.Controllers;
 
-public class HomeController : Infrastructor.ControllerBase
+public class HomeController : Infrastructure.ControllerBase
 {
 	public HomeController() : base()
 	{
