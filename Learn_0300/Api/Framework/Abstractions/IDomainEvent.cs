@@ -1,6 +1,5 @@
-﻿namespace Framework.Abstractions
+﻿namespace Framework.Abstractions;
+
+public interface IDomainEvent : IEvent
 {
-	public interface IDomainEvent : IEvent
-	{
-	}
 }

@@ -1,6 +1,5 @@
-﻿namespace Framework.Abstractions
+﻿namespace Framework.Abstractions;
+
+public interface IEvent : MediatR.INotification
 {
-	public interface IEvent : MediatR.INotification
-	{
-	}
 }
