@@ -1,15 +1,15 @@
 ﻿namespace Api.Commands.DoSomething02;
 
 public class DoSomething02CommandHandler :
-	object, Framework.Abstractions.ICommandHandler<DoSomething02Command, string>
+	Dtat.Framework.CommandHandlerBase<DoSomething02Command, string>
 {
 	public DoSomething02CommandHandler() : base()
 	{
 	}
 
-	public async System.Threading.Tasks.Task<FluentResults.Result<string>> Handle
-		(DoSomething02Command request,
-		System.Threading.CancellationToken cancellationToken)
+	public async override System.Threading.Tasks.Task<FluentResults.Result<string>>
+		HandleAsync(DoSomething02Command command,
+		System.Threading.CancellationToken cancellationToken = default)
 	{
 		var result =
 			new FluentResults.Result<string>();
@@ -24,7 +24,7 @@ public class DoSomething02CommandHandler :
 
 				// **************************************************
 				var message =
-					request.SomeProperty.ToUpper();
+					command.SomeProperty.ToUpper();
 
 				result.WithSuccess
 					(successMessage: "Success Message (1)");

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<Nullable>enable</Nullable>
@@ -9,10 +9,6 @@
 	<ItemGroup>
 		<PackageReference Include="FluentResults" Version="3.11.0" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Dtat.Framework\Dtat.Framework.csproj" />
 	</ItemGroup>
 
 </Project>

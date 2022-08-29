@@ -1,15 +1,15 @@
 ﻿namespace Api.Notifications;
 
-public class DoSomething01NotificationHandler : object,
-	Framework.Abstractions.IEventHandler<DoSomethingNotification>
+public class DoSomething01NotificationHandler :
+	Dtat.Framework.EventHandlerBase<DoSomethingNotification>
 {
 	public DoSomething01NotificationHandler() : base()
 	{
 	}
 
-	public async System.Threading.Tasks.Task Handle
+	public async override System.Threading.Tasks.Task HandleAsync
 		(DoSomethingNotification notification,
-		System.Threading.CancellationToken cancellationToken)
+		System.Threading.CancellationToken cancellationToken = default)
 	{
 		await System.Threading.Tasks.Task.Run(() =>
 		{

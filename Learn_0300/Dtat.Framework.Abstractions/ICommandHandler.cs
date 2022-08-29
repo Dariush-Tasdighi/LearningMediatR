@@ -1,4 +1,4 @@
-﻿namespace Framework.Abstractions;
+﻿namespace Dtat.Framework.Abstractions;
 
 public interface ICommandHandler<TCommand> :
 	MediatR.IRequestHandler<TCommand, FluentResults.Result>

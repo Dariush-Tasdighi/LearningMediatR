@@ -1,15 +1,15 @@
 ﻿namespace Api.Notifications;
 
-public class DoSomething03NotificationHandler : object,
-	Framework.Abstractions.IEventHandler<DoSomethingNotification>
+public class DoSomething03NotificationHandler :
+	Dtat.Framework.EventHandlerBase<DoSomethingNotification>
 {
 	public DoSomething03NotificationHandler() : base()
 	{
 	}
 
-	public async System.Threading.Tasks.Task Handle
+	public async override System.Threading.Tasks.Task HandleAsync
 		(DoSomethingNotification notification,
-		System.Threading.CancellationToken cancellationToken)
+		System.Threading.CancellationToken cancellationToken = default)
 	{
 		await System.Threading.Tasks.Task.Run(() =>
 		{
@@ -18,10 +18,8 @@ public class DoSomething03NotificationHandler : object,
 
 			System.Console.WriteLine(value: message);
 			System.Diagnostics.Debug.WriteLine(value: message);
-		});
+		}, cancellationToken: cancellationToken);
 
-		// مهم
-		// وجود این خطا در قسمتی که انتشار صورت گرفته است اثری ندارد
 		throw new System.Exception(message: "Some Error Message!");
 	}
 }

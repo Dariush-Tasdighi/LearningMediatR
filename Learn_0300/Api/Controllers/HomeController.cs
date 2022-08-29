@@ -67,30 +67,30 @@ public class HomeController : Infrastructure.ControllerBase
 		}
 	}
 
-	///// <summary>
-	///// https://localhost:7059/api/home/DoSomething02
-	///// </summary>
-	//[Microsoft.AspNetCore.Mvc.HttpGet(template: "dosomething02")]
-	//public async System.Threading.Tasks.Task
-	//	<Microsoft.AspNetCore.Mvc.IActionResult> DoSomething02()
-	//{
-	//	try
-	//	{
-	//		var notification = new Notifications
-	//			.DoSomethingNotification(someProperty: "Notification Message");
+	/// <summary>
+	/// https://localhost:7059/api/home/DoSomething03
+	/// </summary>
+	[Microsoft.AspNetCore.Mvc.HttpGet(template: "dosomething03")]
+	public async System.Threading.Tasks.Task
+		<Microsoft.AspNetCore.Mvc.IActionResult> DoSomething03()
+	{
+		try
+		{
+			var notification = new Notifications
+				.DoSomethingNotification(SomeProperty: "Notification Message");
 
-	//		//await Mediator.Publish
-	//		//	<Notifications.DoSomethingNotification>(notification: notification);
+			//await Mediator.Publish
+			//	<Notifications.DoSomethingNotification>(notification: notification);
 
-	//		// Simplified!
-	//		await Mediator.Publish
-	//			(notification: notification);
+			// Simplified!
+			await Mediator.Publish
+				(notification: notification);
 
-	//		return Ok(value: "OK");
-	//	}
-	//	catch (System.Exception ex)
-	//	{
-	//		return BadRequest(error: ex.Message);
-	//	}
-	//}
+			return Ok(value: "OK");
+		}
+		catch (System.Exception ex)
+		{
+			return BadRequest(error: ex.Message);
+		}
+	}
 }

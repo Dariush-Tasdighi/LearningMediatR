@@ -1,15 +1,15 @@
 ﻿namespace Api.Notifications;
 
-public class DoSomething02NotificationHandler : object,
-	Framework.Abstractions.IEventHandler<DoSomethingNotification>
+public class DoSomething02NotificationHandler :
+	Dtat.Framework.EventHandlerBase<DoSomethingNotification>
 {
 	public DoSomething02NotificationHandler() : base()
 	{
 	}
 
-	public async System.Threading.Tasks.Task Handle
+	public async override System.Threading.Tasks.Task HandleAsync
 		(DoSomethingNotification notification,
-		System.Threading.CancellationToken cancellationToken)
+		System.Threading.CancellationToken cancellationToken = default)
 	{
 		await System.Threading.Tasks.Task.Run(() =>
 		{
@@ -18,6 +18,6 @@ public class DoSomething02NotificationHandler : object,
 
 			System.Console.WriteLine(value: message);
 			System.Diagnostics.Debug.WriteLine(value: message);
-		});
+		}, cancellationToken: cancellationToken);
 	}
 }
