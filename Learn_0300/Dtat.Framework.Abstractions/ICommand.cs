@@ -4,6 +4,6 @@ public interface ICommand : MediatR.IRequest<FluentResults.Result>
 {
 }
 
-public interface ICommand<TValue> : MediatR.IRequest<FluentResults.Result<TValue>>
+public interface ICommand<TResult> : MediatR.IRequest<FluentResults.Result<TResult>>
 {
 }
